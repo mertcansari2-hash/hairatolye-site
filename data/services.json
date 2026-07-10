@@ -1,0 +1,18 @@
+{
+  "items": [
+    { "category": "Saç", "name": "Kesim", "desc": "Yüz analizine göre kişiye özel kesim", "dur": 45, "price": "₺3.500" },
+    { "category": "Saç", "name": "Fön", "desc": "Maşa, düz ya da dalgalı şekillendirme", "dur": 40, "price": "₺600" },
+    { "category": "Renk & Balyaj", "name": "Dip Boya", "desc": "Çıkan köklerin renk rötuşu", "dur": 60, "price": "₺3.000" },
+    { "category": "Renk & Balyaj", "name": "Komple Boyama", "desc": "Boydan boya tek renk uygulama", "dur": 120, "price": "₺5.000" },
+    { "category": "Renk & Balyaj", "name": "Balyaj", "desc": "Doğal geçişli, ışıltılı renklendirme", "dur": 180, "price": "₺10.000" },
+    { "category": "Bakım", "name": "Keratin Bakımı", "desc": "Yıpranmış saçlar için düzleştirici bakım", "dur": 150, "price": "₺5.000" },
+    { "category": "Bakım", "name": "Şok Bakım", "desc": "Yoğun onarıcı bakım kürü", "dur": 60, "price": "₺2.000" },
+    { "category": "Makyaj", "name": "Günlük Makyaj", "desc": "Gündüz & davet için doğal makyaj", "dur": 45, "price": "₺1.500" },
+    { "category": "Makyaj", "name": "Gelin Makyajı", "desc": "Prova dahil, güne özel makyaj", "dur": 90, "price": "₺7.000" },
+    { "category": "Güzellik & Ağda", "name": "Manikür", "desc": "El ve tırnak bakımı", "dur": 45, "price": "₺600" },
+    { "category": "Güzellik & Ağda", "name": "Pedikür", "desc": "Ayak ve tırnak bakımı", "dur": 50, "price": "₺700" },
+    { "category": "Güzellik & Ağda", "name": "Kalıcı Oje", "desc": "Uzun ömürlü, parlak uygulama", "dur": 40, "price": "₺600" },
+    { "category": "Güzellik & Ağda", "name": "Komple Ağda", "desc": "Tüm vücut ağda uygulaması", "dur": 45, "price": "₺2.000" },
+    { "category": "Güzellik & Ağda", "name": "Yüz & Bıyık Ağda", "desc": "Yüz bölgesi ağda uygulaması", "dur": 20, "price": "₺700" }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "items": [
+    { "image": "gorseller/insta-1.jpg", "alt": "HairAtölye çalışması" },
+    { "image": "gorseller/insta-2.jpg", "alt": "HairAtölye çalışması" },
+    { "image": "gorseller/insta-3.jpg", "alt": "HairAtölye çalışması" },
+    { "image": "gorseller/insta-4.jpg", "alt": "HairAtölye çalışması" },
+    { "image": "gorseller/insta-5.jpg", "alt": "HairAtölye çalışması" },
+    { "image": "gorseller/insta-6.jpg", "alt": "HairAtölye çalışması" }
+  ]
+}

@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HAIR ATÖLYE — Nişantaşı Kuaför & Güzellik Atölyesi</title>
+<meta name="description" content="HAIR ATÖLYE — Nişantaşı'nda kadınlara özel butik saç ve güzellik atölyesi. Kesim, boya, balyaj, keratin bakımı, makyaj ve daha fazlası. Online randevu WhatsApp ile.">
+<meta name="theme-color" content="#F1E4E6">
+<link rel="icon" href="logo.jpg">
+<link rel="apple-touch-icon" href="logo.jpg">
+<meta property="og:type" content="website">
+<meta property="og:title" content="HAIR ATÖLYE — Nişantaşı Kuaför & Güzellik">
+<meta property="og:description" content="Nişantaşı'nda kadınlara özel butik saç ve güzellik atölyesi. Online randevu WhatsApp ile.">
+<meta property="og:image" content="logo.jpg">
+<meta property="og:locale" content="tr_TR">
+<style>
+  :root{
+    --ground:#F1E4E6; --ground-2:#E7D3D6; --card:#FCF7F7;
+    --ink:#1C1A1A; --ink-soft:#6E6265;
+    --line:#DBC5C9; --line-soft:#E8D6D9;
+    --rose:#A85D6B; --rose-soft:#C58A93; --blush:#EBD7DA;
+    --btn-bg:#1C1A1A; --btn-fg:#FCF7F7;
+    --serif:"Iowan Old Style",Georgia,"Times New Roman",serif;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --maxw:1140px;
+    --shadow:0 22px 60px -34px rgba(40,22,28,.45);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;text-wrap:balance;letter-spacing:.005em}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .eyebrow{font-family:var(--sans);font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;
+    color:var(--rose);font-weight:700;display:inline-flex;align-items:center;gap:.7em}
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--rose);display:inline-block}
+
+  .wordmark{font-family:var(--sans);line-height:.92;text-transform:uppercase}
+  .wordmark .w1{font-weight:800;letter-spacing:.02em}
+  .wordmark .w2{font-weight:400;letter-spacing:.42em}
+
+  header.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--ground) 88%,transparent);
+    backdrop-filter:blur(12px);border-bottom:1px solid var(--line-soft)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
+  .brand{display:flex;flex-direction:column;gap:2px}
+  .brand .w1{font-size:1.18rem}
+  .brand .w2{font-size:.6rem;color:var(--ink-soft)}
+  .nav-links{display:flex;gap:34px;align-items:center}
+  .nav-links a{font-size:.78rem;letter-spacing:.1em;color:var(--ink-soft);transition:color .2s;text-transform:uppercase}
+  .nav-links a:hover{color:var(--ink)}
+  .btn{font-family:var(--sans);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;
+    padding:12px 22px;border-radius:2px;cursor:pointer;border:1px solid transparent;transition:.22s;font-weight:700}
+  .btn-solid{background:var(--btn-bg);color:var(--btn-fg)}
+  .btn-solid:hover{opacity:.86}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+  .btn-ghost:hover{border-color:var(--ink)}
+  .nav-right{display:flex;align-items:center;gap:16px}
+  .menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--ink);
+    width:42px;height:38px;border-radius:2px;cursor:pointer;font-size:1.1rem}
+
+  .hero{position:relative;padding:88px 0 96px;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(2.9rem,6.6vw,5.2rem);line-height:1;margin:.32em 0 .5em}
+  .hero h1 em{font-style:italic;color:var(--rose)}
+  .hero p.lead{font-size:1.12rem;color:var(--ink-soft);max-width:44ch;margin:0 0 34px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hero-meta{margin-top:44px;display:flex;gap:40px;flex-wrap:wrap}
+  .hero-meta .m-num{font-family:var(--serif);font-size:1.9rem;color:var(--ink)}
+  .hero-meta .m-lab{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+  .hero-visual{position:relative;aspect-ratio:4/5;border-radius:3px;overflow:hidden;
+    box-shadow:var(--shadow);border:1px solid var(--line)}
+  .hero-visual .frame{position:absolute;inset:14px;border:1px solid rgba(255,255,255,.4);z-index:2;pointer-events:none}
+  .hero-visual .vlabel{position:absolute;left:22px;bottom:20px;z-index:3;color:#fff;font-family:var(--sans);
+    font-size:.66rem;letter-spacing:.34em;text-transform:uppercase;text-shadow:0 2px 14px rgba(0,0,0,.45)}
+  .hero-visual canvas{display:block;width:100%;height:100%}
+  .visual-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+  .visual-img[hidden]{display:none}
+  .hero-badge{position:absolute;top:-14px;right:-14px;z-index:4;background:var(--card);border:1px solid var(--line);
+    border-radius:50%;width:118px;height:118px;display:grid;place-items:center;text-align:center;
+    font-family:var(--sans);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;line-height:1.5;
+    color:var(--rose);font-weight:700;transform:rotate(6deg);box-shadow:var(--shadow)}
+
+  .strip{background:var(--ink);color:var(--ground);overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .strip-track{display:flex;gap:56px;padding:15px 0;white-space:nowrap;animation:slide 32s linear infinite;width:max-content}
+  .strip-track span{font-family:var(--serif);font-style:italic;font-size:1.05rem;opacity:.92;display:inline-flex;gap:56px;align-items:center}
+  .strip-track span::after{content:"✦";color:var(--rose-soft);font-style:normal}
+  @keyframes slide{to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){.strip-track{animation:none}}
+
+  section{padding:96px 0}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:52px;flex-wrap:wrap}
+  .sec-head h2{font-size:clamp(2rem,4.4vw,3rem);line-height:1.04;margin:.28em 0 0;max-width:16ch}
+  .sec-head h2 em{font-style:italic;color:var(--rose)}
+  .sec-head .sh-note{color:var(--ink-soft);max-width:34ch;font-size:.98rem}
+
+  .about{background:var(--ground-2)}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .about h2{font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;margin:.4em 0}
+  .about h2 em{font-style:italic;color:var(--rose)}
+  .about p{color:var(--ink-soft);margin:0 0 18px}
+  .about-list{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:14px}
+  .about-list li{display:flex;gap:14px;align-items:baseline;font-size:.96rem}
+  .about-list li::before{content:"—";color:var(--rose)}
+
+  .svc-cats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px}
+  .cat-pill{font-size:.76rem;letter-spacing:.08em;padding:9px 18px;border:1px solid var(--line);border-radius:40px;
+    cursor:pointer;color:var(--ink-soft);background:var(--card);transition:.2s;text-transform:uppercase;font-weight:600}
+  .cat-pill:hover{border-color:var(--rose);color:var(--ink)}
+  .cat-pill.active{background:var(--btn-bg);color:var(--btn-fg);border-color:var(--btn-bg)}
+  .price-list{display:grid;gap:2px}
+  .price-row{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:18px;padding:20px 4px;
+    border-bottom:1px solid var(--line-soft)}
+  .price-row .pr-main{display:flex;flex-direction:column;gap:4px}
+  .price-row .pr-name{font-family:var(--serif);font-size:1.28rem}
+  .price-row .pr-desc{color:var(--ink-soft);font-size:.9rem}
+  .price-row .pr-price{font-family:var(--serif);font-size:1.25rem;color:var(--rose);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .price-row .pr-dur{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px}
+  .svc-note{margin-top:24px;font-size:.86rem;color:var(--ink-soft);font-style:italic}
+
+  .book{background:var(--ground-2)}
+  .book-card{background:var(--card);border:1px solid var(--line);border-radius:4px;box-shadow:var(--shadow);
+    overflow:hidden;max-width:940px;margin:0 auto}
+  .steps{display:flex;border-bottom:1px solid var(--line)}
+  .step{flex:1;padding:18px 12px;text-align:center;position:relative;color:var(--ink-soft);
+    font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;transition:.25s}
+  .step .s-num{font-family:var(--serif);font-size:1.05rem;display:block;color:var(--line)}
+  .step.active{color:var(--ink)}
+  .step.active .s-num,.step.done .s-num{color:var(--rose)}
+  .step:not(:last-child)::after{content:"";position:absolute;right:0;top:22%;height:56%;width:1px;background:var(--line)}
+  .book-body{padding:38px 40px 42px;min-height:340px}
+  .book-body h3{font-size:1.5rem;margin:0 0 6px}
+  .book-body .bb-sub{color:var(--ink-soft);font-size:.92rem;margin:0 0 26px}
+
+  .opt-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .opt{border:1px solid var(--line);border-radius:3px;padding:18px 20px;cursor:pointer;background:var(--ground);
+    transition:.18s;display:flex;justify-content:space-between;align-items:center;gap:14px}
+  .opt:hover{border-color:var(--rose-soft);transform:translateY(-1px)}
+  .opt.sel{border-color:var(--btn-bg);box-shadow:inset 0 0 0 1px var(--btn-bg)}
+  .opt .o-name{font-family:var(--serif);font-size:1.12rem}
+  .opt .o-sub{font-size:.82rem;color:var(--ink-soft)}
+  .opt .o-price{font-family:var(--serif);color:var(--rose);font-variant-numeric:tabular-nums}
+  .opt .o-check{width:20px;height:20px;border-radius:50%;border:1px solid var(--line);flex:none;display:grid;place-items:center;font-size:.7rem;color:var(--btn-fg)}
+  .opt.sel .o-check{background:var(--btn-bg);border-color:var(--btn-bg)}
+
+  .cal-wrap{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+  .cal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+  .cal-head .c-mon{font-family:var(--serif);font-size:1.15rem}
+  .cal-nav{background:none;border:1px solid var(--line);color:var(--ink);width:32px;height:32px;border-radius:3px;cursor:pointer;transition:.2s}
+  .cal-nav:hover:not(:disabled){border-color:var(--rose);color:var(--rose)}
+  .cal-nav:disabled{opacity:.3;cursor:not-allowed}
+  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+  .cal-dow{text-align:center;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);padding-bottom:6px}
+  .cal-day{aspect-ratio:1;border:1px solid transparent;background:var(--ground);border-radius:3px;cursor:pointer;
+    font-family:var(--sans);font-size:.9rem;color:var(--ink);transition:.15s;font-variant-numeric:tabular-nums}
+  .cal-day:hover:not(:disabled){border-color:var(--rose-soft)}
+  .cal-day:disabled{color:var(--line);cursor:not-allowed;background:transparent}
+  .cal-day.sel{background:var(--btn-bg);color:var(--btn-fg);border-color:var(--btn-bg)}
+  .slot-title{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rose);margin:0 0 12px;font-weight:700}
+  .slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .slot{padding:10px 6px;border:1px solid var(--line);background:var(--ground);border-radius:3px;cursor:pointer;
+    font-size:.9rem;text-align:center;transition:.15s;font-variant-numeric:tabular-nums;color:var(--ink)}
+  .slot:hover{border-color:var(--rose-soft)}
+  .slot.sel{background:var(--btn-bg);color:var(--btn-fg);border-color:var(--btn-bg)}
+  .slot-empty{color:var(--ink-soft);font-size:.9rem;font-style:italic;grid-column:1/-1}
+
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .field{display:flex;flex-direction:column;gap:7px}
+  .field.full{grid-column:1/-1}
+  .field label{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+  .field input,.field textarea{background:var(--ground);border:1px solid var(--line);border-radius:3px;
+    padding:12px 14px;color:var(--ink);font-family:var(--sans);font-size:.95rem;transition:.2s;resize:vertical}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--rose)}
+  .summary{background:var(--ground);border:1px solid var(--line);border-radius:3px;padding:18px 20px;margin-top:22px}
+  .summary-row{display:flex;justify-content:space-between;gap:14px;padding:7px 0;font-size:.92rem;border-bottom:1px dashed var(--line-soft)}
+  .summary-row:last-child{border-bottom:0}
+  .summary-row .sr-k{color:var(--ink-soft)}
+  .summary-row .sr-v{font-family:var(--serif);text-align:right}
+  .summary-row.total .sr-v{color:var(--rose);font-size:1.1rem}
+
+  .book-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;
+    padding:20px 40px;border-top:1px solid var(--line);background:var(--ground)}
+  .book-foot .hint{font-size:.82rem;color:var(--ink-soft)}
+  .btn[disabled]{opacity:.4;cursor:not-allowed}
+  .btn-wa{background:#25D366;color:#0b3d1e}
+  .btn-wa:hover{opacity:.88}
+
+  .confirm{text-align:center;padding:20px 10px}
+  .confirm .seal{width:76px;height:76px;border-radius:50%;border:1px solid var(--rose);color:var(--rose);
+    display:grid;place-items:center;margin:0 auto 22px;font-size:1.8rem}
+  .confirm h3{font-size:1.9rem;margin-bottom:8px}
+  .confirm p{color:var(--ink-soft);max-width:44ch;margin:0 auto 8px}
+
+  footer{background:var(--ink);color:var(--ground);padding:72px 0 34px}
+  footer a{color:var(--ground)}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.12)}
+  .foot-brand .w1{font-size:1.7rem}
+  .foot-brand .w2{font-size:.62rem;color:var(--rose-soft)}
+  .foot-col h4{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rose-soft);margin:0 0 16px;font-weight:700;font-family:var(--sans)}
+  .foot-col p,.foot-col a{display:block;color:rgba(255,255,255,.75);font-size:.92rem;margin-bottom:9px;transition:.2s}
+  .foot-col a:hover{color:#fff}
+  .foot-bottom{display:flex;justify-content:space-between;gap:16px;padding-top:22px;font-size:.8rem;color:rgba(255,255,255,.55);flex-wrap:wrap}
+
+  /* GALLERY */
+  .gallery{background:var(--ground)}
+  .g-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .g-tile{position:relative;aspect-ratio:1;border-radius:3px;overflow:hidden;border:1px solid var(--line);display:block;background:var(--ground-2)}
+  .g-tile .g-ph{position:absolute;inset:0;display:grid;place-items:center;align-content:center;gap:6px;
+    background:linear-gradient(135deg,#c58a93,#e2c2c8 55%,#f0dde0);color:#fff;text-align:center}
+  .g-tile .g-ph span{font-size:1.7rem}
+  .g-tile .g-ph small{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;opacity:.92}
+  .g-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+  .g-tile img.g-hide{display:none}
+  .g-tile .g-ov{position:absolute;inset:0;z-index:2;transition:.25s;display:grid;place-items:center;color:#fff;opacity:0;background:rgba(28,26,26,0)}
+  .g-tile:hover .g-ov{background:rgba(28,26,26,.34);opacity:1}
+  .g-tile .g-ov span{font-size:1.5rem}
+  @media (max-width:620px){.g-grid{grid-template-columns:repeat(2,1fr);gap:8px}}
+
+  /* REVIEWS */
+  .reviews{background:var(--ground-2)}
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .rev-card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:26px 24px;display:flex;flex-direction:column;gap:14px}
+  .rev-stars{color:var(--rose);letter-spacing:.15em;font-size:.95rem}
+  .rev-text{font-family:var(--serif);font-size:1.08rem;line-height:1.55;margin:0;color:var(--ink)}
+  .rev-who{display:flex;flex-direction:column;gap:1px;margin-top:auto}
+  .rev-who .rw-name{font-weight:700;font-size:.92rem}
+  .rev-who .rw-meta{font-size:.78rem;color:var(--ink-soft)}
+  @media (max-width:820px){.rev-grid{grid-template-columns:1fr}}
+
+  /* MAP / CONTACT */
+  .map-grid{display:grid;grid-template-columns:.82fr 1.18fr;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--card);box-shadow:var(--shadow)}
+  .map-info{padding:38px 36px;display:flex;flex-direction:column;gap:18px}
+  .map-info h3{font-size:1.55rem;margin:0}
+  .mi-row{display:flex;flex-direction:column;gap:2px}
+  .mi-lab{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rose);font-weight:700}
+  .mi-val{color:var(--ink);font-size:.98rem;line-height:1.5}
+  a.mi-val:hover{color:var(--rose)}
+  .map-embed{position:relative;min-height:360px;background:linear-gradient(135deg,#e2c2c8,#f0dde0)}
+  .map-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:1}
+  .map-embed .m-fallback{position:absolute;inset:0;display:grid;place-items:center;z-index:0;text-align:center;padding:20px}
+  @media (max-width:820px){.map-grid{grid-template-columns:1fr}.map-embed{min-height:300px}}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .hero-visual{max-width:420px;margin:0 auto;width:100%}
+    .about-grid{grid-template-columns:1fr;gap:32px}
+    .cal-wrap{grid-template-columns:1fr;gap:26px}
+    .nav-links{display:none}
+    .menu-btn{display:block}
+  }
+  @media (max-width:620px){
+    .wrap{padding:0 20px}
+    section{padding:66px 0}
+    .opt-grid{grid-template-columns:1fr}
+    .form-grid{grid-template-columns:1fr}
+    .book-body{padding:28px 22px}
+    .book-foot{padding:16px 22px;flex-wrap:wrap}
+    .steps .step{font-size:0;padding:14px 4px}
+    .steps .step .s-num{font-size:1rem}
+    .steps .step.active{font-size:.62rem}
+    .foot-grid{grid-template-columns:1fr;gap:30px}
+    .hero-meta{gap:26px}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand wordmark"><span class="w1">Hair</span><span class="w2">Atölye</span></a>
+    <nav class="nav-links">
+      <a href="#top">Ana Sayfa</a>
+      <a href="#hizmetler">Hizmetler</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#yorumlar">Yorumlar</a>
+      <a href="#randevu">Randevu</a>
+    </nav>
+    <div class="nav-right">
+      <a href="#randevu" class="btn btn-solid">Randevu Al</a>
+      <button class="menu-btn" aria-label="Menü">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy reveal">
+        <span class="eyebrow">Nişantaşı · İstanbul</span>
+        <h1>Saçınız bir <em>imza,</em> bakımınız bir sanat.</h1>
+        <p class="lead">Nişantaşı'nın kalbinde, kadınlara özel butik bir güzellik ve saç atölyesi. Profesyonel ellerde, yalnızca size ayrılmış bir zaman.</p>
+        <div class="hero-cta">
+          <a href="#randevu" class="btn btn-solid">Randevu Oluştur</a>
+          <a href="#hizmetler" class="btn btn-ghost">Hizmetleri Gör</a>
+        </div>
+        <div class="hero-meta">
+          <div><div class="m-num">Uzman</div><div class="m-lab">Profesyonel Ekip</div></div>
+          <div><div class="m-num">4.9</div><div class="m-lab">Müşteri Puanı</div></div>
+          <div><div class="m-num">60sn</div><div class="m-lab">Online Randevu</div></div>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <canvas id="heroCanvas"></canvas>
+        <img id="heroImg" class="visual-img" alt="HairAtölye" hidden>
+        <div class="frame"></div>
+        <div class="hero-badge">Professional<br>Haircare</div>
+        <div class="vlabel">Nişantaşı Atölye</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip" aria-hidden="true">
+    <div class="strip-track">
+      <span>Kesim</span><span>Fön</span><span>Balyaj</span><span>Boya</span><span>Keratin Bakımı</span>
+      <span>Gelin Makyajı</span><span>Manikür · Pedikür</span><span>Ağda</span>
+      <span>Kesim</span><span>Fön</span><span>Balyaj</span><span>Boya</span><span>Keratin Bakımı</span>
+      <span>Gelin Makyajı</span><span>Manikür · Pedikür</span><span>Ağda</span>
+    </div>
+  </div>
+
+  <section class="about" id="atolye">
+    <div class="wrap about-grid">
+      <div class="reveal">
+        <span class="eyebrow">Atölyemiz</span>
+        <h2>Sıradan bir kuaför değil, size ait bir <em>atölye.</em></h2>
+        <p>HairAtölye'de her randevu tek bir misafire ayrılır. Kalabalık ve sıra beklemek yok — yalnızca saçınıza, ruh halinize ve tarzınıza odaklanan profesyonel bir ekip var.</p>
+        <p>Kişiye özel renk formülleri, saç sağlığını önceleyen bakım ürünleri, makyaj ve güzellik dokunuşları; Nişantaşı'nın zarafetini yansıtan bir atmosferde.</p>
+        <ul class="about-list">
+          <li>Randevuya özel, birebir ilgi</li>
+          <li>Saç dostu premium bakım ürünleri</li>
+          <li>Uzman renk &amp; balyaj danışmanlığı</li>
+          <li>Gelin makyajı &amp; özel gün hazırlıkları</li>
+        </ul>
+      </div>
+      <div class="hero-visual reveal" style="aspect-ratio:1/1">
+        <canvas id="aboutCanvas"></canvas>
+        <img id="aboutImg" class="visual-img" alt="HairAtölye Atölye" hidden>
+        <div class="frame"></div>
+        <div class="vlabel">Teşvikiye, Nişantaşı</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hizmetler">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <span class="eyebrow">Hizmet Menüsü</span>
+          <h2>Zarafetin her <em>detayı</em></h2>
+        </div>
+        <p class="sh-note">Fiyatlar saç uzunluğu ve işleme göre değişiklik gösterebilir. Randevu sırasında net bilgi verilir.</p>
+      </div>
+      <div class="svc-cats reveal" id="svcCats"></div>
+      <div class="price-list reveal" id="priceList"></div>
+      <p class="svc-note">Belirtilen süreler ortalamadır; renk ve bakım işlemlerinde saç yapısına göre değişebilir.</p>
+    </div>
+  </section>
+
+  <section class="gallery" id="galeri">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <span class="eyebrow">Instagram</span>
+          <h2>Atölyeden <em>kareler</em></h2>
+        </div>
+        <a href="https://www.instagram.com/hairatolye/" target="_blank" rel="noopener" class="btn btn-ghost js-insta">@hairatolye · Takip Et</a>
+      </div>
+      <div class="g-grid reveal" id="gGrid"></div>
+      <p class="svc-note" style="text-align:center">Gerçek çalışmalarınızı göstermek için <strong>gorseller</strong> klasörüne <strong>insta-1.jpg … insta-6.jpg</strong> dosyalarını eklemeniz yeterli.</p>
+    </div>
+  </section>
+
+  <section class="reviews" id="yorumlar">
+    <div class="wrap">
+      <div class="sec-head reveal" style="justify-content:center;text-align:center;flex-direction:column;align-items:center">
+        <span class="eyebrow" style="justify-content:center">Yorumlar</span>
+        <h2>Misafirlerimiz <em>ne diyor?</em></h2>
+      </div>
+      <div class="rev-grid reveal" id="revGrid"></div>
+      <p class="svc-note" style="text-align:center">Örnek yorumlardır; gerçek müşteri yorumlarınızla değiştirebilirsiniz.</p>
+    </div>
+  </section>
+
+  <section class="book" id="randevu">
+    <div class="wrap">
+      <div class="sec-head reveal" style="justify-content:center;text-align:center;flex-direction:column;align-items:center">
+        <span class="eyebrow" style="justify-content:center">Randevu</span>
+        <h2>Size ayrılmış zamanı <em>şimdi seçin</em></h2>
+        <p class="sh-note" style="max-width:48ch;text-align:center">Üç kısa adımda seçiminizi yapın; son adımda randevunuz WhatsApp üzerinden bize ulaşsın.</p>
+      </div>
+
+      <div class="book-card reveal">
+        <div class="steps" id="steps">
+          <div class="step active" data-step="0"><span class="s-num">01</span>Hizmet</div>
+          <div class="step" data-step="1"><span class="s-num">02</span>Tarih &amp; Saat</div>
+          <div class="step" data-step="2"><span class="s-num">03</span>Bilgiler</div>
+        </div>
+        <div class="book-body" id="bookBody"></div>
+        <div class="book-foot" id="bookFoot">
+          <span class="hint" id="bookHint">Başlamak için bir hizmet seçin.</span>
+          <div style="display:flex;gap:12px">
+            <button class="btn btn-ghost" id="backBtn" style="display:none">Geri</button>
+            <button class="btn btn-solid" id="nextBtn" disabled>Devam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="iletisim">
+    <div class="wrap">
+      <div class="sec-head reveal" style="justify-content:center;text-align:center;flex-direction:column;align-items:center">
+        <span class="eyebrow" style="justify-content:center">İletişim</span>
+        <h2>Bizi Nişantaşı'nda <em>bulun</em></h2>
+      </div>
+      <div class="map-grid reveal">
+        <div class="map-info">
+          <h3 class="wordmark"><span class="w1">Hair</span> <span class="w2">Atölye</span></h3>
+          <div class="mi-row"><span class="mi-lab">Adres</span><a class="mi-val js-address" href="https://www.google.com/maps/search/Hair+At%C3%B6lye/@41.0476864,28.9970865,17z" target="_blank" rel="noopener">Teşvikiye, Ömer Rüştü Paşa Sok. No: 19<br>34360 Nişantaşı / İstanbul</a></div>
+          <div class="mi-row"><span class="mi-lab">Telefon</span><a class="mi-val js-phone" href="tel:+905398699517">0 539 869 95 17</a></div>
+          <div class="mi-row"><span class="mi-lab">WhatsApp</span><a class="mi-val js-whats" href="https://wa.me/905398699517" target="_blank" rel="noopener">Randevu için yazın →</a></div>
+          <div class="mi-row"><span class="mi-lab">Çalışma Saatleri</span><span class="mi-val js-hours">Pazartesi – Cumartesi: 08.00 – 19.00<br>Pazar: Kapalı</span></div>
+          <a href="#randevu" class="btn btn-solid" style="align-self:flex-start;margin-top:6px">Randevu Al</a>
+        </div>
+        <div class="map-embed">
+          <div class="m-fallback"><a href="https://www.google.com/maps/search/Hair+At%C3%B6lye/@41.0476864,28.9970865,17z" target="_blank" rel="noopener" class="btn btn-ghost js-mapbtn">Haritada Aç ↗</a></div>
+          <iframe id="siteMap" title="HairAtölye konumu" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=41.0476864,28.9970865&z=17&hl=tr&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand wordmark"><span class="w1">Hair</span> <span class="w2">Atölye</span></div>
+        <p style="color:rgba(255,255,255,.7);max-width:34ch;margin-top:14px">Nişantaşı'nda kadınlara özel butik güzellik ve saç atölyesi.</p>
+      </div>
+      <div class="foot-col">
+        <h4>İletişim</h4>
+        <a class="js-phone" href="tel:+905398699517">0 539 869 95 17</a>
+        <a class="js-whats" href="https://wa.me/905398699517">WhatsApp ile yaz</a>
+        <a class="js-insta js-insta-handle" href="https://www.instagram.com/hairatolye/" target="_blank" rel="noopener">@hairatolye</a>
+      </div>
+      <div class="foot-col">
+        <h4>Adres &amp; Saatler</h4>
+        <a class="js-address" href="https://www.google.com/maps/search/Hair+At%C3%B6lye/@41.0476864,28.9970865,17z" target="_blank" rel="noopener">Teşvikiye, Ömer Rüştü Paşa Sok. No: 19<br>34360 Nişantaşı / İstanbul</a>
+        <p class="js-hours" style="margin-top:12px">Pzt – Cmt: 08.00 – 19.00<br>Pazar: Kapalı</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 HairAtölye — Tüm hakları saklıdır.</span>
+      <span>Nişantaşı, İstanbul</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- DEFAULTS (yayında data/*.json bunları geçersiz kılar) ---------- */
+  var SITE={
+    phone:"0 539 869 95 17", phoneTel:"+905398699517", whatsapp:"905398699517",
+    instagram:"https://www.instagram.com/hairatolye/", instagramHandle:"@hairatolye",
+    addressLine1:"Teşvikiye, Ömer Rüştü Paşa Sok. No: 19", addressLine2:"34360 Nişantaşı / İstanbul",
+    hours:"Pazartesi – Cumartesi: 08.00 – 19.00\nPazar: Kapalı",
+    mapsLink:"https://www.google.com/maps/search/Hair+At%C3%B6lye/@41.0476864,28.9970865,17z",
+    mapEmbed:"https://maps.google.com/maps?q=41.0476864,28.9970865&z=17&hl=tr&output=embed",
+    heroImage:"", aboutImage:"",
+    reviews:[
+      {stars:5,text:"Balyaj için gittim, sonuç tam hayal ettiğim gibi oldu. İlgi ve ortam kusursuzdu.",name:"Ayşe K.",meta:"Balyaj · Google"},
+      {stars:5,text:"Yıllardır saçımı emanet ettiğim tek yer. Randevu almak da çok pratik — WhatsApp'tan hallettim.",name:"Elif D.",meta:"Kesim & Fön · Instagram"},
+      {stars:5,text:"Gelin saçım ve makyajım gün boyu dört dörtlük durdu. En özel günümde beni çok mutlu ettiler.",name:"Zeynep A.",meta:"Gelin Paketi · Google"}
+    ]
+  };
+  var WA_NUMBER=SITE.whatsapp;
+  var GALLERY=[
+    {image:"gorseller/insta-1.jpg",alt:"HairAtölye çalışması"},
+    {image:"gorseller/insta-2.jpg",alt:"HairAtölye çalışması"},
+    {image:"gorseller/insta-3.jpg",alt:"HairAtölye çalışması"},
+    {image:"gorseller/insta-4.jpg",alt:"HairAtölye çalışması"},
+    {image:"gorseller/insta-5.jpg",alt:"HairAtölye çalışması"},
+    {image:"gorseller/insta-6.jpg",alt:"HairAtölye çalışması"}
+  ];
+  function esc(s){return (s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function setAll(sel,fn){document.querySelectorAll(sel).forEach(fn);}
+
+  /* CANVAS */
+  function grad(id){
+    var c=document.getElementById(id); if(!c) return;
+    var dpr=Math.min(window.devicePixelRatio||1,2);
+    var r=c.getBoundingClientRect(); if(r.width===0) return;
+    c.width=r.width*dpr; c.height=r.height*dpr;
+    var x=c.getContext('2d'); x.scale(dpr,dpr);
+    var w=r.width,h=r.height;
+    var g=x.createLinearGradient(0,0,w,h);
+    g.addColorStop(0,'#c58a93');g.addColorStop(.5,'#e2c2c8');g.addColorStop(1,'#f0dde0');
+    x.fillStyle=g; x.fillRect(0,0,w,h);
+    var blobs=[[0.25,0.3,'rgba(255,235,240,.55)'],[0.78,0.62,'rgba(168,93,107,.42)'],[0.5,0.92,'rgba(255,225,232,.4)']];
+    blobs.forEach(function(b){
+      var rg=x.createRadialGradient(w*b[0],h*b[1],0,w*b[0],h*b[1],w*0.55);
+      rg.addColorStop(0,b[2]); rg.addColorStop(1,'rgba(0,0,0,0)');
+      x.fillStyle=rg; x.fillRect(0,0,w,h);
+    });
+    x.globalAlpha=0.08; x.strokeStyle='#fff'; x.lineWidth=1;
+    for(var i=0;i<h;i+=7){x.beginPath();x.moveTo(0,i);x.lineTo(w,i+8);x.stroke();}
+    x.globalAlpha=1;
+  }
+  function drawCanvases(){grad('heroCanvas');grad('aboutCanvas');}
+  drawCanvases(); window.addEventListener('resize',drawCanvases);
+
+  /* DATA (fallback — data/services.json yayında geçersiz kılar) */
+  var CAT_ORDER=['Saç','Renk & Balyaj','Bakım','Makyaj','Güzellik & Ağda'];
+  var SERVICES=[
+    {category:'Saç',name:'Kesim',desc:'Yüz analizine göre kişiye özel kesim',dur:45,price:'₺3.500'},
+    {category:'Saç',name:'Fön',desc:'Maşa, düz ya da dalgalı şekillendirme',dur:40,price:'₺600'},
+    {category:'Renk & Balyaj',name:'Dip Boya',desc:'Çıkan köklerin renk rötuşu',dur:60,price:'₺3.000'},
+    {category:'Renk & Balyaj',name:'Komple Boyama',desc:'Boydan boya tek renk uygulama',dur:120,price:'₺5.000'},
+    {category:'Renk & Balyaj',name:'Balyaj',desc:'Doğal geçişli, ışıltılı renklendirme',dur:180,price:'₺10.000'},
+    {category:'Bakım',name:'Keratin Bakımı',desc:'Yıpranmış saçlar için düzleştirici bakım',dur:150,price:'₺5.000'},
+    {category:'Bakım',name:'Şok Bakım',desc:'Yoğun onarıcı bakım kürü',dur:60,price:'₺2.000'},
+    {category:'Makyaj',name:'Günlük Makyaj',desc:'Gündüz & davet için doğal makyaj',dur:45,price:'₺1.500'},
+    {category:'Makyaj',name:'Gelin Makyajı',desc:'Prova dahil, güne özel makyaj',dur:90,price:'₺7.000'},
+    {category:'Güzellik & Ağda',name:'Manikür',desc:'El ve tırnak bakımı',dur:45,price:'₺600'},
+    {category:'Güzellik & Ağda',name:'Pedikür',desc:'Ayak ve tırnak bakımı',dur:50,price:'₺700'},
+    {category:'Güzellik & Ağda',name:'Kalıcı Oje',desc:'Uzun ömürlü, parlak uygulama',dur:40,price:'₺600'},
+    {category:'Güzellik & Ağda',name:'Komple Ağda',desc:'Tüm vücut ağda uygulaması',dur:45,price:'₺2.000'},
+    {category:'Güzellik & Ağda',name:'Yüz & Bıyık Ağda',desc:'Yüz bölgesi ağda uygulaması',dur:20,price:'₺700'}
+  ];
+
+  /* SERVICES / GALLERY / REVIEWS RENDER */
+  var catsEl=document.getElementById('svcCats'), listEl=document.getElementById('priceList'),
+      gGrid=document.getElementById('gGrid'), revGrid=document.getElementById('revGrid'), activeCat=CAT_ORDER[0];
+  function activeCats(){return CAT_ORDER.filter(function(c){return SERVICES.some(function(s){return s.category===c;});});}
+  function renderCats(){
+    var cats=activeCats(); if(cats.indexOf(activeCat)<0)activeCat=cats[0];
+    catsEl.innerHTML='';
+    cats.forEach(function(c){
+      var b=document.createElement('button');
+      b.className='cat-pill'+(c===activeCat?' active':''); b.textContent=c;
+      b.addEventListener('click',function(){activeCat=c;renderCats();renderList();});
+      catsEl.appendChild(b);
+    });
+  }
+  function renderList(){
+    listEl.innerHTML='';
+    SERVICES.filter(function(s){return s.category===activeCat;}).forEach(function(s){
+      var row=document.createElement('div'); row.className='price-row';
+      row.innerHTML='<div class="pr-main"><span class="pr-name">'+esc(s.name)+'</span>'+
+        '<span class="pr-desc">'+esc(s.desc)+'</span><span class="pr-dur">'+esc(s.dur)+' dk</span></div>'+
+        '<span class="pr-price">'+esc(s.price)+'</span>';
+      listEl.appendChild(row);
+    });
+  }
+  function renderGallery(){
+    if(!gGrid)return; gGrid.innerHTML='';
+    GALLERY.forEach(function(it){
+      var a=document.createElement('a');
+      a.className='g-tile'; a.href=SITE.instagram||'#'; a.target='_blank'; a.rel='noopener'; a.setAttribute('aria-label','HairAtölye Instagram');
+      a.innerHTML='<div class="g-ph"><span>🌸</span><small>Fotoğraf</small></div>'+
+        '<img src="'+esc(it.image)+'" alt="'+esc(it.alt||'HairAtölye')+'" loading="lazy" onerror="this.classList.add(\'g-hide\')">'+
+        '<div class="g-ov"><span>📷</span></div>';
+      gGrid.appendChild(a);
+    });
+  }
+  function stars(n){n=Math.max(0,Math.min(5,parseInt(n,10)||0));var s='';for(var i=0;i<5;i++)s+=i<n?'★':'☆';return s;}
+  function renderReviews(){
+    if(!revGrid)return; revGrid.innerHTML='';
+    (SITE.reviews||[]).forEach(function(r){
+      var d=document.createElement('div'); d.className='rev-card';
+      d.innerHTML='<div class="rev-stars">'+stars(r.stars)+'</div>'+
+        '<p class="rev-text">“'+esc(r.text)+'”</p>'+
+        '<div class="rev-who"><span class="rw-name">'+esc(r.name)+'</span><span class="rw-meta">'+esc(r.meta)+'</span></div>';
+      revGrid.appendChild(d);
+    });
+  }
+  function setVisual(id,src){var im=document.getElementById(id); if(!im)return; if(src){im.src=src;im.removeAttribute('hidden');}else{im.setAttribute('hidden','');}}
+  function applySite(){
+    WA_NUMBER=SITE.whatsapp||WA_NUMBER;
+    setAll('.js-phone',function(a){a.textContent=SITE.phone;a.setAttribute('href','tel:'+(SITE.phoneTel||''));});
+    setAll('.js-whats',function(a){a.setAttribute('href','https://wa.me/'+SITE.whatsapp);});
+    setAll('.js-insta',function(a){a.setAttribute('href',SITE.instagram);});
+    setAll('.js-insta-handle',function(a){a.textContent=SITE.instagramHandle;});
+    setAll('.js-address',function(a){a.innerHTML=esc(SITE.addressLine1)+'<br>'+esc(SITE.addressLine2); if(a.tagName==='A')a.setAttribute('href',SITE.mapsLink);});
+    setAll('.js-hours',function(el){el.innerHTML=esc(SITE.hours).replace(/\n/g,'<br>');});
+    setAll('.js-mapbtn',function(a){a.setAttribute('href',SITE.mapsLink);});
+    var mp=document.getElementById('siteMap'); if(mp&&SITE.mapEmbed)mp.setAttribute('src',SITE.mapEmbed);
+    setVisual('heroImg',SITE.heroImage); setVisual('aboutImg',SITE.aboutImage);
+  }
+  renderCats(); renderList(); renderGallery(); renderReviews(); applySite();
+
+  /* BOOKING — 3 steps: 0 hizmet, 1 tarih&saat, 2 bilgiler */
+  var state={step:0,service:null,date:null,time:null,name:'',phone:'',note:''};
+  var body=document.getElementById('bookBody'),
+      nextBtn=document.getElementById('nextBtn'), backBtn=document.getElementById('backBtn'),
+      hint=document.getElementById('bookHint'), stepsEls=document.querySelectorAll('#steps .step');
+  var MONTHS=['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
+  var DOW=['Pzt','Sal','Çar','Per','Cum','Cmt','Paz'];
+  var TODAY=new Date(2026,6,9); var calY=2026, calM=6;
+  var FINAL=2;
+
+  function updateSteps(){stepsEls.forEach(function(el,i){el.classList.toggle('active',i===state.step);el.classList.toggle('done',i<state.step);});}
+  function fmtDate(d){return d.getDate()+' '+MONTHS[d.getMonth()]+' '+d.getFullYear();}
+
+  function render(){
+    updateSteps();
+    backBtn.style.display=state.step>0?'inline-block':'none';
+    if(state.step===FINAL){nextBtn.textContent='WhatsApp ile Onayla';nextBtn.classList.add('btn-wa');nextBtn.classList.remove('btn-solid');}
+    else{nextBtn.textContent='Devam';nextBtn.classList.add('btn-solid');nextBtn.classList.remove('btn-wa');}
+    if(state.step===0)renderService();
+    else if(state.step===1)renderDate();
+    else if(state.step===2)renderDetails();
+    validate();
+  }
+  function renderService(){
+    hint.textContent='Başlamak için bir hizmet seçin.';
+    var h='<h3>Hangi hizmeti almak istersiniz?</h3><p class="bb-sub">Size en uygun bakımı seçin — dilediğiniz zaman değiştirebilirsiniz.</p><div class="opt-grid">';
+    SERVICES.forEach(function(s,i){var sel=state.service&&state.service.name===s.name;
+      h+='<div class="opt'+(sel?' sel':'')+'" data-i="'+i+'"><div><div class="o-name">'+s.name+'</div><div class="o-sub">'+s.dur+' dk</div></div>'+
+        '<div style="display:flex;align-items:center;gap:12px"><span class="o-price">'+s.price+'</span><span class="o-check">✓</span></div></div>';});
+    h+='</div>'; body.innerHTML=h;
+    body.querySelectorAll('.opt').forEach(function(o){o.addEventListener('click',function(){state.service=SERVICES[+o.dataset.i];render();});});
+  }
+  function renderDate(){
+    hint.textContent='Gün ve saat seçin.';
+    var h='<h3>Ne zaman gelmek istersiniz?</h3><p class="bb-sub">Pazar günleri kapalıyız. Uygun saatler seçtiğiniz güne göre listelenir.</p><div class="cal-wrap"><div>'+
+      '<div class="cal-head"><button class="cal-nav" id="pm">‹</button><span class="c-mon">'+MONTHS[calM]+' '+calY+'</span><button class="cal-nav" id="nm">›</button></div><div class="cal-grid">';
+    DOW.forEach(function(d){h+='<div class="cal-dow">'+d+'</div>';});
+    var first=new Date(calY,calM,1), off=(first.getDay()+6)%7;
+    for(var b=0;b<off;b++)h+='<div></div>';
+    var days=new Date(calY,calM+1,0).getDate();
+    for(var d=1;d<=days;d++){var dt=new Date(calY,calM,d);
+      var dis=(dt<TODAY)||dt.getDay()===0; var sel=state.date&&state.date.getTime()===dt.getTime();
+      h+='<button class="cal-day'+(sel?' sel':'')+'" '+(dis?'disabled':'')+' data-d="'+d+'">'+d+'</button>';}
+    h+='</div></div><div><p class="slot-title">Uygun Saatler</p><div class="slots" id="slots">';
+    if(!state.date)h+='<span class="slot-empty">Önce bir gün seçin.</span>';
+    else{['08.00','09.00','10.00','11.00','12.00','13.00','14.00','15.00','16.00','17.00','18.00','18.30'].forEach(function(t){
+      h+='<button class="slot'+(state.time===t?' sel':'')+'" data-t="'+t+'">'+t+'</button>';});}
+    h+='</div></div></div>'; body.innerHTML=h;
+    document.getElementById('pm').disabled=(calY<TODAY.getFullYear()||(calY===TODAY.getFullYear()&&calM<=TODAY.getMonth()));
+    document.getElementById('pm').addEventListener('click',function(){if(!this.disabled){calM--;if(calM<0){calM=11;calY--;}render();}});
+    document.getElementById('nm').addEventListener('click',function(){calM++;if(calM>11){calM=0;calY++;}render();});
+    body.querySelectorAll('.cal-day[data-d]').forEach(function(c){if(c.disabled)return;
+      c.addEventListener('click',function(){state.date=new Date(calY,calM,+c.dataset.d);state.time=null;render();});});
+    body.querySelectorAll('.slot[data-t]').forEach(function(s){s.addEventListener('click',function(){state.time=s.dataset.t;render();});});
+  }
+  function renderDetails(){
+    hint.textContent='Onaya bir adım kaldı.';
+    var s=state.service;
+    body.innerHTML='<h3>Son olarak, sizi tanıyalım</h3><p class="bb-sub">"WhatsApp ile Onayla" dediğinizde bilgiler hazır bir mesaj olarak bize iletilir.</p>'+
+      '<div class="form-grid">'+
+      '<div class="field"><label>Ad Soyad</label><input id="f-name" value="'+state.name+'" placeholder="Adınız Soyadınız"></div>'+
+      '<div class="field"><label>Telefon</label><input id="f-phone" value="'+state.phone+'" placeholder="05__ ___ __ __"></div>'+
+      '<div class="field full"><label>Not (opsiyonel)</label><textarea id="f-note" rows="2" placeholder="Saç uzunluğu, özel istek...">'+state.note+'</textarea></div>'+
+      '</div>'+
+      '<div class="summary">'+
+        '<div class="summary-row"><span class="sr-k">Hizmet</span><span class="sr-v">'+(s?s.name:'—')+'</span></div>'+
+        '<div class="summary-row"><span class="sr-k">Tarih & Saat</span><span class="sr-v">'+(state.date?fmtDate(state.date)+' · '+state.time:'—')+'</span></div>'+
+        '<div class="summary-row total"><span class="sr-k">Tahmini Ücret</span><span class="sr-v">'+(s?s.price:'—')+'</span></div>'+
+      '</div>';
+    var bind=function(id,key){var el=document.getElementById(id);el.addEventListener('input',function(){state[key]=el.value;validate();});};
+    bind('f-name','name');bind('f-phone','phone');bind('f-note','note');
+  }
+  function validate(){
+    var ok=false;
+    if(state.step===0)ok=!!state.service;
+    else if(state.step===1)ok=!!(state.date&&state.time);
+    else if(state.step===2)ok=state.name.trim().length>1&&state.phone.replace(/\D/g,'').length>=10;
+    nextBtn.disabled=!ok;
+  }
+  function waLink(){
+    var s=state.service;
+    var msg='Merhaba HairAtölye, randevu almak istiyorum.\n'+
+      '• Hizmet: '+s.name+' ('+s.price+')\n'+
+      '• Tarih: '+fmtDate(state.date)+'\n'+
+      '• Saat: '+state.time+'\n'+
+      '• Ad Soyad: '+state.name+'\n'+
+      '• Telefon: '+state.phone+
+      (state.note?('\n• Not: '+state.note):'');
+    return 'https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg);
+  }
+  function confirm(){
+    var url=waLink();
+    try{window.open(url,'_blank');}catch(e){}
+    document.getElementById('steps').style.display='none';
+    document.getElementById('bookFoot').style.display='none';
+    body.innerHTML='<div class="confirm"><div class="seal">✓</div>'+
+      '<h3>Neredeyse tamam, '+state.name.split(' ')[0]+'!</h3>'+
+      '<p>Randevu talebiniz WhatsApp\'ta hazırlandı. Açılan sohbette <strong>Gönder</strong>\'e basmanız yeterli — ekibimiz en kısa sürede onaylayacak.</p>'+
+      '<p style="margin-top:6px">'+fmtDate(state.date)+' · '+state.time+' — <strong>'+state.service.name+'</strong></p>'+
+      '<div style="margin-top:26px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">'+
+        '<a href="'+url+'" target="_blank" rel="noopener" class="btn btn-wa">WhatsApp\'ı Aç</a>'+
+        '<a href="#top" class="btn btn-ghost">Ana Sayfa</a></div></div>';
+  }
+  nextBtn.addEventListener('click',function(){
+    if(nextBtn.disabled)return;
+    if(state.step===FINAL){confirm();return;}
+    state.step++; render();
+    document.getElementById('randevu').scrollIntoView({behavior:'smooth',block:'start'});
+  });
+  backBtn.addEventListener('click',function(){if(state.step>0){state.step--;render();}});
+  render();
+
+  /* LOAD DATA (yayında data/*.json içeriği gömülü varsayılanları geçersiz kılar) */
+  function loadJSON(p){return fetch(p,{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json();}).catch(function(){return null;});}
+  if(window.fetch){
+    Promise.all([loadJSON('data/services.json'),loadJSON('data/gallery.json'),loadJSON('data/site.json')]).then(function(res){
+      if(res[2])SITE=Object.assign({},SITE,res[2]);
+      if(res[0]&&res[0].items&&res[0].items.length)SERVICES=res[0].items;
+      if(res[1]&&res[1].items)GALLERY=res[1].items;
+      renderCats(); renderList(); renderGallery(); renderReviews(); applySite();
+      if(state.step===0)renderService();
+    });
+  }
+
+  /* REVEAL */
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  }else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});}
+})();
+</script>
+</body>
+</html>

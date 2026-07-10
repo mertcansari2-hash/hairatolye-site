@@ -1,0 +1,20 @@
+HAIR ATÖLYE — Galeri görselleri
+================================
+
+Instagram galerisindeki 6 kareyi kendi fotoğraflarınızla değiştirmek için:
+
+1. Bu klasöre 6 adet kare (1:1) fotoğraf ekleyin.
+2. Dosya adları TAM olarak şu şekilde olsun:
+      insta-1.jpg
+      insta-2.jpg
+      insta-3.jpg
+      insta-4.jpg
+      insta-5.jpg
+      insta-6.jpg
+3. Site otomatik olarak bu fotoğrafları gösterir.
+   (Fotoğraf yoksa yerinde pembe bir yer tutucu görünür — sorun değil.)
+
+İpuçları:
+- Kare (ör. 1080x1080 px) fotoğraflar en iyi durur.
+- Dosya boyutunu küçük tutun (her biri ~300 KB altında) ki site hızlı açılsın.
+- İstediğiniz zaman fotoğrafları değiştirip yeniden yükleyin.
