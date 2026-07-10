@@ -1,0 +1,108 @@
+media:
+  input: gorseller
+  output: /gorseller
+
+content:
+  - name: services
+    label: "Hizmetler & Fiyatlar"
+    type: file
+    path: data/services.json
+    fields:
+      - name: items
+        label: Hizmetler
+        type: object
+        list: true
+        fields:
+          - name: category
+            label: Kategori
+            type: select
+            options:
+              values: ["Saç", "Renk & Balyaj", "Bakım", "Makyaj", "Güzellik & Ağda"]
+          - name: name
+            label: Hizmet adı
+            type: string
+          - name: desc
+            label: Kısa açıklama
+            type: string
+          - name: dur
+            label: Süre (dakika)
+            type: number
+          - name: price
+            label: Fiyat (örn. ₺3.500)
+            type: string
+
+  - name: gallery
+    label: Galeri (Instagram)
+    type: file
+    path: data/gallery.json
+    fields:
+      - name: items
+        label: Fotoğraflar
+        type: object
+        list: true
+        fields:
+          - name: image
+            label: Fotoğraf
+            type: image
+          - name: alt
+            label: Açıklama (görme engelliler için)
+            type: string
+
+  - name: site
+    label: Site Bilgileri
+    type: file
+    path: data/site.json
+    fields:
+      - name: phone
+        label: Telefon (görünen)
+        type: string
+      - name: phoneTel
+        label: "Telefon (arama linki, örn. +905398699517)"
+        type: string
+      - name: whatsapp
+        label: "WhatsApp numarası (ülke kodu ile, örn. 905398699517)"
+        type: string
+      - name: instagram
+        label: Instagram adresi (URL)
+        type: string
+      - name: instagramHandle
+        label: "Instagram kullanıcı adı (örn. @hairatolye)"
+        type: string
+      - name: addressLine1
+        label: Adres 1. satır
+        type: string
+      - name: addressLine2
+        label: Adres 2. satır
+        type: string
+      - name: hours
+        label: Çalışma saatleri
+        type: text
+      - name: mapsLink
+        label: "Google Haritalar linki (Haritada Aç butonu)"
+        type: string
+      - name: mapEmbed
+        label: "Google Haritalar gömülü adresi (output=embed ile biten)"
+        type: string
+      - name: heroImage
+        label: Ana görsel (boş bırakılırsa desen kullanılır)
+        type: image
+      - name: aboutImage
+        label: Atölye görseli (boş bırakılırsa desen kullanılır)
+        type: image
+      - name: reviews
+        label: Müşteri Yorumları
+        type: object
+        list: true
+        fields:
+          - name: stars
+            label: Yıldız (1-5)
+            type: number
+          - name: text
+            label: Yorum
+            type: text
+          - name: name
+            label: İsim
+            type: string
+          - name: meta
+            label: "Alt bilgi (örn. Balyaj · Google)"
+            type: string
