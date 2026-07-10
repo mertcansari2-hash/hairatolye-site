@@ -9,11 +9,26 @@
   "hours": "Pazartesi – Cumartesi: 08.00 – 19.00\nPazar: Kapalı",
   "mapsLink": "https://www.google.com/maps/search/Hair+At%C3%B6lye/@41.0476864,28.9970865,17z",
   "mapEmbed": "https://maps.google.com/maps?q=41.0476864,28.9970865&z=17&hl=tr&output=embed",
-  "heroImage": "",
-  "aboutImage": "",
+  "heroImage": "/gorseller/insta-4-1.jpg",
+  "aboutImage": "/gorseller/insta-3-1.jpg",
   "reviews": [
-    { "stars": 5, "text": "Balyaj için gittim, sonuç tam hayal ettiğim gibi oldu. İlgi ve ortam kusursuzdu.", "name": "Ayşe K.", "meta": "Balyaj · Google" },
-    { "stars": 5, "text": "Yıllardır saçımı emanet ettiğim tek yer. Randevu almak da çok pratik — WhatsApp'tan hallettim.", "name": "Elif D.", "meta": "Kesim & Fön · Instagram" },
-    { "stars": 5, "text": "Gelin saçım ve makyajım gün boyu dört dörtlük durdu. En özel günümde beni çok mutlu ettiler.", "name": "Zeynep A.", "meta": "Gelin Paketi · Google" }
+    {
+      "stars": 5,
+      "text": "Balyaj için gittim, sonuç tam hayal ettiğim gibi oldu. İlgi ve ortam kusursuzdu.",
+      "name": "Ayşe K.",
+      "meta": "Balyaj · Google"
+    },
+    {
+      "stars": 5,
+      "text": "Yıllardır saçımı emanet ettiğim tek yer. Randevu almak da çok pratik — WhatsApp'tan hallettim.",
+      "name": "Elif D.",
+      "meta": "Kesim & Fön · Instagram"
+    },
+    {
+      "stars": 5,
+      "text": "Gelin saçım ve makyajım gün boyu dört dörtlük durdu. En özel günümde beni çok mutlu ettiler.",
+      "name": "Zeynep A.",
+      "meta": "Gelin Paketi · Google"
+    }
   ]
 }
